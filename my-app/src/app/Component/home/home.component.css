@@ -1,0 +1,65 @@
+.root_home{
+    font-family: sans-serif;
+}
+.root_home header{
+    padding: 15px;
+}
+.root_home header ul{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    list-style: none;
+    margin: 0;
+    margin-left: 60%;
+}
+.root_home header a{
+    text-decoration: none;
+    display: block;
+    margin: 10px;
+    color: black;
+    font-weight: bolder;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+}
+.container > div{
+    width: 50%;
+}
+.who_iam{
+    text-align: center;
+}
+.who_iam b{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #d5c455;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.who_iam h1{
+    font-weight: 700;
+    color: #222222;
+    font-size: 80px;
+    line-height: 1.2;
+    margin: 30px 0px;
+}
+.PhotoSection{
+    text-align: center;
+    background-color: #d5c455;
+    height: 100%;
+}
+#readmore_btn{
+    background: #d5c455 !important;
+    border: 1px solid #d5c455 !important;
+    color: #fff !important;
+    width: fit-content;
+    text-decoration: none;
+    display: inline-block;
+    padding: 25px;
+    margin: 35px 0px;
+}
+.who_iam p{
+    font-weight: bold;
+}

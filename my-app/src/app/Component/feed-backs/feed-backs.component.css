@@ -1,0 +1,89 @@
+
+.feedbacks{
+    min-height: 100vh;
+    margin: 30px;
+}
+.pagination {
+    display: flex;
+}
+.message_container{
+    background: #dbdbdb;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 30px;
+    padding: 30px;
+}
+.message-input{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#message{
+    width: 100%;
+    padding: 0.6rem 1rem;
+}
+#envoyer{
+    box-shadow: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    outline: none;
+    line-height: 100%;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    min-height: 38px;
+}
+#page,#left,#right{
+    background: #e3e3e3;
+    color: #6e6e6e;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    width: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+#left,#right{
+    background: #a1a1a1;
+}
+.list_chat{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.list_chat > div{
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.list_chat > div p{
+    margin: 0;
+}
+
+.hidde_clone{
+    display: none;
+}
+.replies{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.replies input{
+    border-radius: 50px;
+    border: none;
+    background: red;
+    padding: 20px 30px;
+}
+.hidden-reply{
+    display: none;
+}
+.show-replyinput{
+    display: block;
+}   

@@ -69,7 +69,7 @@ function sendMessage(event) {
 
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
-    console.log(message.sender == username)
+    
 
     var messageElement = document.createElement('li');
 

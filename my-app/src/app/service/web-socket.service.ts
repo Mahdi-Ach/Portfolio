@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Stomp } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
+import getCommentIndex from '../Utilities/RetrieveKeyByValue';
 import { CommentService } from './comment.service';
 import { ReplyService } from './reply.service';
-import { error } from 'node:console';
-import getCommentIndex from '../Utilities/RetrieveKeyByValue';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,7 +39,7 @@ export class WebSocketService{
     this.right = right;
     this.page = page;
     this.stompClient.connect({}, (frame:any)=> {
-      console.log("eza")
+      
       this.Commentservice.commentservice(0,this)
       this.stompClient.subscribe('/topic/messages', (receivedMessage)=> {
         if(this.numpage != 0){
@@ -55,19 +54,15 @@ export class WebSocketService{
             this.totalElements = data.id
           });
           this.stompClient.subscribe('/topic/reply_messages', (receivedMessage)=> {
-            console.log("***")
-            console.log(this.totalElements)
-            console.log(this.numpage)
-            console.log(this.index)
             this.index = getCommentIndex(document.querySelectorAll(".list-replies"),document.querySelector(".current"))
-            console.log(this.index)
+            
             let data = JSON.parse(receivedMessage.body);
             if(data.chat_id == this.totalElements-(5*(this.numpage)+parseInt(this.index))){
                 this.Servicereply.create_newreplys(data.reply)
             }
           })
           this.stompClient.subscribe('/topic/public', (receivedMessage)=> {
-            console.log("--------------------")
+            
           })
     });
     

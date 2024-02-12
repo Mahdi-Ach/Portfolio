@@ -17,7 +17,7 @@ export class FeedBacksComponent implements OnInit,AfterViewInit{
   private ShowComment = false;
   constructor(public webSocketService: WebSocketService) {}
   ngAfterViewInit(): void {
-    console.log("feedback")
+    
     this.webSocketService.initializeWebSocketConnection(
       this.inputMessage?.nativeElement,
       this.envoyer?.nativeElement,

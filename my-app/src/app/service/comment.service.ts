@@ -39,7 +39,7 @@ export class CommentService {
           totalPages: value.totalPages,
           number: value.number
         };
-        console.log(body);
+        
         this.loadComment(body, websocketservice);
       },
       error: (error) => { },

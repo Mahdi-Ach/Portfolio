@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { WebSocketService } from './web-socket.service';
 import getCommentIndex from '../Utilities/RetrieveKeyByValue';
+import { WebSocketService } from './web-socket.service';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +56,7 @@ export class ReplyService {
   send_reply(e,websocketservice:WebSocketService){
     if(e.key == "Enter"){
       websocketservice.index = getCommentIndex(document.querySelectorAll(".replies input"),e.target)
-        console.log(websocketservice.index)
+      
       this.sendReplyMessage(e.target.value,websocketservice.id_mesage,websocketservice)
       return;
     }

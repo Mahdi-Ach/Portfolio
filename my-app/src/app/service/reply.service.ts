@@ -56,8 +56,9 @@ export class ReplyService {
   send_reply(e,websocketservice:WebSocketService){
     if(e.key == "Enter"){
       websocketservice.index = getCommentIndex(document.querySelectorAll(".replies input"),e.target)
+        console.log(websocketservice.index)
       this.sendReplyMessage(e.target.value,websocketservice.id_mesage,websocketservice)
-        return;
+      return;
     }
   }
 }

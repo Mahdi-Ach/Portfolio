@@ -4,6 +4,7 @@ import SockJS from 'sockjs-client';
 import { CommentService } from './comment.service';
 import { ReplyService } from './reply.service';
 import { error } from 'node:console';
+import getCommentIndex from '../Utilities/RetrieveKeyByValue';
 @Injectable({
   providedIn: 'root'
 })
@@ -54,6 +55,12 @@ export class WebSocketService{
             this.totalElements = data.id
           });
           this.stompClient.subscribe('/topic/reply_messages', (receivedMessage)=> {
+            console.log("***")
+            console.log(this.totalElements)
+            console.log(this.numpage)
+            console.log(this.index)
+            this.index = getCommentIndex(document.querySelectorAll(".list-replies"),document.querySelector(".current"))
+            console.log(this.index)
             let data = JSON.parse(receivedMessage.body);
             if(data.chat_id == this.totalElements-(5*(this.numpage)+parseInt(this.index))){
                 this.Servicereply.create_newreplys(data.reply)
@@ -84,8 +91,5 @@ export class WebSocketService{
         this.Commentservice.commentservice(page.innerHTML,this)
         page.innerHTML = parseInt(page.innerHTML) + 1;
     })
-  }
-  isConnected(): boolean {
-    return this.stompClient && this.stompClient.connected;
   }
 }
